@@ -9,9 +9,9 @@ public class Identify : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvass = GetComponents<GameObject>();
-        canvass[0].SetActive(false);
-        canvass[1].SetActive(false);
+        //canvass[0].SetActive(false);
+        //canvass[1].SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -25,18 +25,20 @@ public class Identify : MonoBehaviour
         {
             if (hitInf.collider.CompareTag("box"))
             {
-                canvass[0].SetActive(true);
+                canvass[1].SetActive(true);
 
             }
             if (hitInf.collider.CompareTag("globe"))
             {
-                canvass[1].SetActive(true);
+                canvass[0].SetActive(true);
             }
-            else
-            {
+        }
+        else if (Physics.Raycast(CameraRay, out hitInf))
+        {
+            if (hitInf.collider != hitInf.collider.CompareTag("globe") || hitInf.collider != hitInf.collider.CompareTag("box"))             
+            
                 canvass[0].SetActive(false);
                 canvass[1].SetActive(false);
-            }
         }
     }
 
