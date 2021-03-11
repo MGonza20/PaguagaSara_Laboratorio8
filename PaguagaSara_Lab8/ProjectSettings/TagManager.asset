@@ -6,6 +6,7 @@ TagManager:
   tags:
   - box
   - globe
+  - alarm
   layers:
   - Default
   - TransparentFX

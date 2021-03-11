@@ -24,23 +24,25 @@ public class Identify : MonoBehaviour
         {
             if (hitInf.collider.CompareTag("box"))
             {
+                canvass[0].SetActive(false);
                 canvass[1].SetActive(true);
 
             }
-            else
-            {
-                canvass[1].SetActive(false);
-            }
-
-            if (hitInf.collider.CompareTag("globe"))
+            else if (hitInf.collider.CompareTag("globe"))
             {
                 canvass[0].SetActive(true);
+                canvass[1].SetActive(false);
             }
             else
             {
                 canvass[0].SetActive(false);
-
+                canvass[1].SetActive(false);
             }
+        }
+        else
+        {
+            canvass[0].SetActive(false);
+            canvass[1].SetActive(false);
         }
     }
 
