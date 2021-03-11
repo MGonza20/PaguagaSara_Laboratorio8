@@ -19,14 +19,13 @@ public class alarmEffect : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            print("entre al trigger");
             GetComponent<Light>().enabled = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-            print("salí del trigger");
+            
             GetComponent<Light>().enabled = false;
     }
 
@@ -34,7 +33,7 @@ public class alarmEffect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("estoy en el trigger");
+            
             GetComponent<Light>().intensity = Mathf.Sin(Time.time);
             
         }

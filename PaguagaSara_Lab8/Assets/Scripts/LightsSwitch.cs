@@ -5,20 +5,22 @@ using UnityEngine;
 public class LightsSwitch : MonoBehaviour
 {
 
-    //AudioSource flashlightSFX;
+    AudioSource flashlightSFX;
 
     // Start is called before the first frame update
     void Start()
     {
-        //flashlightSFX = GetComponent<AudioSource>();
+        flashlightSFX = GetComponent<AudioSource>();
+        GetComponent<Light>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetMouseButtonDown(0))
+        {
             GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
-        GetComponent<AudioSource>().Play();
-
+            flashlightSFX.Play();
+        }
     }
 }
