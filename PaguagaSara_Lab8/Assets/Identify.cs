@@ -9,8 +9,6 @@ public class Identify : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //canvass[0].SetActive(false);
-        //canvass[1].SetActive(false);
         
     }
 
@@ -22,7 +20,7 @@ public class Identify : MonoBehaviour
         RaycastHit hitInf;
 
 
-        if (Physics.Raycast(CameraRay, out hitInf))
+        if (Physics.Raycast(CameraRay, out hitInf, 5))
         {
             if (hitInf.collider.CompareTag("box"))
             {
@@ -44,8 +42,6 @@ public class Identify : MonoBehaviour
 
             }
         }
-
-
     }
 
 
