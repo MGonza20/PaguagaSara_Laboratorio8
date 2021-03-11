@@ -21,6 +21,7 @@ public class Identify : MonoBehaviour
 
         RaycastHit hitInf;
 
+
         if (Physics.Raycast(CameraRay, out hitInf))
         {
             if (hitInf.collider.CompareTag("box"))
@@ -28,6 +29,11 @@ public class Identify : MonoBehaviour
                 canvass[1].SetActive(true);
 
             }
+            else
+            {
+                canvass[1].SetActive(false);
+            }
+
             if (hitInf.collider.CompareTag("globe"))
             {
                 canvass[0].SetActive(true);
@@ -35,17 +41,9 @@ public class Identify : MonoBehaviour
             else
             {
                 canvass[0].SetActive(false);
-                canvass[1].SetActive(false);
+
             }
         }
-        else if (Physics.Raycast(CameraRay, out hitInf))
-        {
-            if (hitInf.collider != !hitInf.collider.CompareTag("globe") || hitInf.collider != hitInf.collider.CompareTag("box"))
-                canvass[0].SetActive(false);
-                canvass[1].SetActive(false);
-
-        }
-
 
 
     }
